@@ -1,0 +1,52 @@
+<project name="KuhlPHP" default="build" basedir=".">
+	<description>
+		Build KuhlPHP
+	</description>
+	<!-- set global properties for this build -->
+	<property name="src.dir" location="php"/>
+	<property name="build.dir" location="build"/>
+	<property name="dist.dir"  location="dist"/>
+	<property name="temp.dir"  location="tmp"/>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+
+	<target name="dist" depends="init"
+			description="" >
+		<!--  -->
+		<copy todir="${dist.dir}">
+			<fileset dir="${src.dir}"/>
+		</copy>
+	</target>
+
+	<target name="build" depends="dist"
+			description="generate PHAR build" >
+		<!-- Create the distribution directory -->
+		<zip destfile="${dist.dir}/kuhl-php-${DSTAMP}.phar"
+			 basedir="${src.dir}"
+			 update="true"
+		/>
+	</target>
+	<target name="compress"
+			description="Use Kompressor to optimize PHP code" >
+		<mkdir dir="${temp.dir}"/>
+		<echo message="Compressing Javascript files at location: ${build.root}/resources/js/*.js" />
+		<java jar="kompressor.jar" fork="true">
+			<arg value="${src.dir}" />
+			<!--<arg value="-v" /> -->
+			<arg value="-o" />
+			<arg value="${build.dir}" />
+		</java>
+	</target>
+	<target name="clean"
+			description="clean up" >
+		<delete dir="${build.dir}"/>
+		<delete dir="${dist.dir}"/>
+		<delete dir="${temp.dir}"/>
+	</target>
+</project>
