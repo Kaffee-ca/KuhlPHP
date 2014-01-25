@@ -3,10 +3,11 @@
 		Build KuhlPHP
 	</description>
 	<!-- set global properties for this build -->
+	<propertyfile file="project.properties" />
 	<property name="src.dir" location="php"/>
-	<property name="build.dir" location="build"/>
-	<property name="dist.dir"  location="dist"/>
-	<property name="temp.dir"  location="tmp"/>
+	<property name="build.dir" location="../../build"/>
+	<property name="dist.dir"  location="../../dist"/>
+	<property name="temp.dir"  location="../../tmp"/>
 
 	<target name="init">
 		<!-- Create the time stamp -->

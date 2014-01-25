@@ -1,15 +1,12 @@
 <?php
-
 namespace kaffee\entities;
 
 /**
- * .
+ * Base for entities with SID.
  * @author ahorvath
  */
 class AbstractUniqueEntity extends AbstractEntity {
-
 	private $sid;
-
 	/**
 	 * .
 	 * @return string
@@ -17,7 +14,6 @@ class AbstractUniqueEntity extends AbstractEntity {
 	public function getSid() {
 		return $this->sid;
 	}
-
 	/**
 	 * .
 	 * @param string $sid
@@ -25,5 +21,4 @@ class AbstractUniqueEntity extends AbstractEntity {
 	public function setSid($sid) {
 		$this->sid = $sid;
 	}
-
 }

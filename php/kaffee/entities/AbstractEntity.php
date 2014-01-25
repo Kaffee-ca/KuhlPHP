@@ -1,5 +1,4 @@
 <?php
-
 namespace kaffee\entities;
 
 /**
@@ -7,10 +6,8 @@ namespace kaffee\entities;
  * @author ahorvath
  */
 class AbstractEntity {
-
 	private $id;
 	private $info;
-
 	/**
 	 * .
 	 * @return int
@@ -18,7 +15,6 @@ class AbstractEntity {
 	public function getId() {
 		return $this->id;
 	}
-
 	/**
 	 * .
 	 * @param int $id
@@ -26,7 +22,6 @@ class AbstractEntity {
 	public function setId($id) {
 		$this->id = $id;
 	}
-
 	/**
 	 * .
 	 * @return string
@@ -34,7 +29,6 @@ class AbstractEntity {
 	public function getInfo() {
 		return $this->info;
 	}
-
 	/**
 	 * .
 	 * @param string $info
@@ -42,5 +36,4 @@ class AbstractEntity {
 	public function setInfo($info) {
 		$this->info = $info;
 	}
-
 }
