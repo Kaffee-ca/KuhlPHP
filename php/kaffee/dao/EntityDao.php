@@ -1,14 +1,15 @@
 <?php
 namespace kaffee\dao;
 
+use kaffe\entities\Entity;
 /**
  * .
  * @author ahorvath
  */
 interface EntityDao {
-	function delete(AbstractEntity $entity);
+	function delete(Entity $entity);
 	function deleteById($id);
-	function persist(AbstractEntity $entity);
+	function persist(tEntity $entity);
 	function selectAll();
 	function selectById($id);
 	function selectByIds(array $ids);

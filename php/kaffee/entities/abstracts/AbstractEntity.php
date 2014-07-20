@@ -1,11 +1,13 @@
 <?php
-namespace kaffee\entities;
+namespace kaffee\entities\abstracts;
+
+use \kaffee\entities\Entity;
 
 /**
  * .
  * @author ahorvath
  */
-class AbstractEntity {
+class AbstractEntity implements Entity {
 	private $id;
 	private $info;
 	/**
