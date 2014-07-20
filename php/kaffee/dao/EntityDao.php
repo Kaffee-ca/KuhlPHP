@@ -9,7 +9,7 @@ use kaffe\entities\Entity;
 interface EntityDao {
 	function delete(Entity $entity);
 	function deleteById($id);
-	function persist(tEntity $entity);
+	function persist(Entity $entity);
 	function selectAll();
 	function selectById($id);
 	function selectByIds(array $ids);
