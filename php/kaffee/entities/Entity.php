@@ -1,5 +1,5 @@
 <?php
-namespace kaffe\entities;
+namespace kaffee\entities;
 /**
  * .
  * @author ahorvath
